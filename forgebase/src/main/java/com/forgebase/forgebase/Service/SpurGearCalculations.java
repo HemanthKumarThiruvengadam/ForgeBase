@@ -28,7 +28,7 @@ public class SpurGearCalculations {
 
     private double LengthOfPath(double module, double teeth, double addenda, double angle) {
         double radians = Math.toRadians(angle);
-        return (double) (Math.sqrt(Math.pow(RadiusOfAddendumCircle(module, teeth, addenda), 2) // This is Ra ^ 2
+        return  (Math.sqrt(Math.pow(RadiusOfAddendumCircle(module, teeth, addenda), 2) // This is Ra ^ 2
                 - Math.pow(PitchCircleRadius(module, teeth), 2) * Math.pow(Math.cos(radians), 2)) //This is R ^ 2 * cos ^ 2 (randians)
                 - PitchCircleRadius(module, teeth) * Math.sin(radians)); // This is R * sin(radians)
     }
@@ -39,7 +39,7 @@ public class SpurGearCalculations {
 
     private double LengthOfArcOfContact(double module, double angle, double teethPinion, double teethGear, double addendaPinion, double addendaGear) {
         double radians = Math.toRadians(angle);
-        return (double) (LengthOfPathOfContact(module, angle, teethPinion, teethGear, addendaPinion, addendaGear)
+        return  (LengthOfPathOfContact(module, angle, teethPinion, teethGear, addendaPinion, addendaGear)
                 / Math.cos(radians));
     }
 
@@ -53,7 +53,7 @@ public class SpurGearCalculations {
     }
 
     private double circumference(double module, double teeth) {
-        return (double) (2 * Math.PI * PitchCircleRadius(module, teeth));
+        return  (2 * Math.PI * PitchCircleRadius(module, teeth));
     }
 
     public double AngleTurnByPinion() {
@@ -71,9 +71,6 @@ public class SpurGearCalculations {
     private double SlidingVelocity(double teethPinion,double teethGear,double module, double teeth, double addenda, double angle){
         return (1 + RatioOfVelocities(teethPinion,teethGear)) * LengthOfPath(module,teeth,addenda,angle);
     }
-    private double RollingVelocity(double module,double teethPinion){
-        return PitchCircleRadius(module,teethPinion);
-    }
     public double MakingContactRatio(){
         return SlidingVelocity(teethOnPinion,teethOnGear,module,teethOnGear,addendaOnGear,pressureAngleOfGear)
                 / PitchCircleRadius(module,teethOnPinion);
@@ -81,9 +78,6 @@ public class SpurGearCalculations {
     public double LeavingContactRatio(){
         return SlidingVelocity(teethOnPinion,teethOnGear,module,teethOnPinion,addendaOnGear,pressureAngleOfGear)
                 / PitchCircleRadius(module,teethOnPinion);
-    }
-    public double AtPitchPointRatio(){
-        return 0;
     }
 
 }
