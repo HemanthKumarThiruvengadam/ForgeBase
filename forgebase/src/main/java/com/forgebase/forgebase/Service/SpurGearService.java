@@ -1,5 +1,6 @@
 package com.forgebase.forgebase.Service;
 
+import com.forgebase.forgebase.Model.HelicalGearModel;
 import com.forgebase.forgebase.Model.SpurGearInputDTO;
 import com.forgebase.forgebase.Model.SpurGearModel;
 import com.forgebase.forgebase.Model.SpurGearOutputDTO;
@@ -8,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -55,6 +57,11 @@ public class SpurGearService {
                 .leavingContactRatio(model.getLeavingContactRatio())
                 .build();
     }
-
+    public SpurGearModel GetById(Long Id){
+        return gearRepository.findById(Id).orElseThrow(() -> new RuntimeException("Gear model not found for this Id"));
+    }
+    public List<SpurGearModel> getAllGears() {
+        return gearRepository.findAll();
+    }
 
 }

@@ -1,19 +1,21 @@
 package com.forgebase.forgebase.Model;
 
+
 import lombok.Builder;
-import lombok.Value;
+import lombok.Data;
+
 
 import java.util.Date;
 
-@Value
+@Data
 @Builder
 public class SpurGearOutputDTO {
-    private
-    Date CreatedAt;
 
-    double contactRatio;
-    double angleTurnByPinion;
-    double angleTurnByGear;
-    double makingContactRatio;
-    double leavingContactRatio;
+    private Date CreatedAt;
+
+    private double contactRatio;
+    private double angleTurnByPinion;
+    private double angleTurnByGear;
+    private double makingContactRatio;
+    private double leavingContactRatio;
 }

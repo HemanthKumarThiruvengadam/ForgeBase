@@ -8,13 +8,12 @@ import java.util.Date;
 @Data
 @Builder
 public class SpurGearInputDTO {
-    private final
-    Date CreatedAt;
+    private final Date CreatedAt;
 
-    double pressureAngleOfGear;
-    double module;
-    double teethOnPinion;
-    double teethOnGear;
-    double addendaOnPinion;
-    double addendaOnGear;
+   private final double pressureAngleOfGear;
+   private final double module;
+   private final double teethOnPinion;
+   private final double teethOnGear;
+   private final double addendaOnPinion;
+   private final double addendaOnGear;
 }

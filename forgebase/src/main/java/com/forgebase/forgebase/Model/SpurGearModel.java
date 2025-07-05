@@ -14,24 +14,23 @@ import java.util.Date;
 @Entity
 @Builder
 public class SpurGearModel {
-    private
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     Date CreatedAt;
 
-    double pressureAngleOfGear;
-    double module;
-    double teethOnPinion;
-    double teethOnGear;
-    double addendaOnPinion;
-    double addendaOnGear;
+    private double pressureAngleOfGear;
+    private double module;
+    private double teethOnPinion;
+    private double teethOnGear;
+    private double addendaOnPinion;
+    private double addendaOnGear;
 
-    double contactRatio;
-    double angleTurnByPinion;
-    double angleTurnByGear;
-    double makingContactRatio;
-    double leavingContactRatio;
+    private double contactRatio;
+    private double angleTurnByPinion;
+    private double angleTurnByGear;
+    private double makingContactRatio;
+    private double leavingContactRatio;
 
 
 }
