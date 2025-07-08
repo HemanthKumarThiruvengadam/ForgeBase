@@ -1,5 +1,7 @@
 package com.forgebase.forgebase.Model;
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 import lombok.Builder;
 import lombok.Data;
 
@@ -9,14 +11,27 @@ import java.util.Date;
 @Builder
 public class HelicalGearInputDTO {
 
+    @NotNull(message = "CreatedAt cannot be null")
     private final Date CreatedAt;
 
-    private final double module;               // m
-    private final double teethOnPinion;        // z1
-    private final double teethOnGear;          // z2
-    private final double pressureAngle;        // φ (degrees)
-    private final double helixAngle;           // β (degrees)
-    private final double addendaOnPinion;      // ap
-    private final double addendaOnGear;     // ag
+    @Min(value = 1, message = "Module must be at least 1")
+    private final double module;
 
+    @Min(value = 1, message = "Teeth on pinion must be at least 1")
+    private final double teethOnPinion;
+
+    @Min(value = 1, message = "Teeth on gear must be at least 1")
+    private final double teethOnGear;
+
+    @Min(value = 10, message = "Pressure angle must be at least 10°")
+    private final double pressureAngle;
+
+    @Min(value = 1, message = "Helix angle must be greater than 0°")
+    private final double helixAngle;
+
+    @Min(value = 0, message = "Addenda on pinion must be non-negative")
+    private final double addendaOnPinion;
+
+    @Min(value = 0, message = "Addenda on gear must be non-negative")
+    private final double addendaOnGear;
 }

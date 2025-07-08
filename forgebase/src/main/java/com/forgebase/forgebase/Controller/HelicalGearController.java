@@ -1,9 +1,9 @@
 package com.forgebase.forgebase.Controller;
 
 import com.forgebase.forgebase.Model.HelicalGearInputDTO;
-import com.forgebase.forgebase.Model.HelicalGearModel;
 import com.forgebase.forgebase.Model.HelicalGearOutputDTO;
 import com.forgebase.forgebase.Service.HelicalGearService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class HelicalGearController {
     private final HelicalGearService helicalGearService;
-
+    @Valid
     @PostMapping
     public ResponseEntity<HelicalGearOutputDTO> CalculateAndSave(@RequestBody HelicalGearInputDTO inputDTO){
         HelicalGearOutputDTO result = helicalGearService.CalculateAndSave(inputDTO);
