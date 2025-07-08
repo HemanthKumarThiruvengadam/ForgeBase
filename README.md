@@ -1,4 +1,4 @@
-# ⚙️ ForgeBase – Gear Calculation Engine
+### ⚙️ ForgeBase – Gear Calculation Engine
 
 Spring Boot application that computes **Spur** and **Helical** gear parameters using standard mechanical engineering formulas. Ideal for students and engineers looking to explore backend logic + mechanical domain integration.
 
@@ -43,7 +43,7 @@ forgebase/
 └── ForgebaseApplication.java
 ```
 
-🔗 API Endpoints
+## 🔗 API Endpoints
 
 Spur Gear
 ```
@@ -61,7 +61,7 @@ GET     /api/helicalgears/calculations/{id}
 DELETE  /api/helicalgears/calculations/{id}
 DELETE  /api/helicalgears/calculations/all
 ```
-📥 Sample Inputs
+## 📥 Sample Inputs
 
 Spur Gear Input
 ```
@@ -103,5 +103,38 @@ Helical Gear Input
 ![Helical Gear POST 2](forgebase/src/screenshots/helicalgearpost2.png)  
 ![Helical Gear GET](forgebase/src/screenshots/helicalgearget.png)  
 ![Helical Gear DELETE](forgebase/src/screenshots/helicalgeardelete.png)
+
+## 🧠 Tech Stack
+
+- Java 21  
+- Spring Boot 3.5  
+- Spring Data JPA  
+- PostgreSQL 🐘  
+- Maven  
+- Lombok  
+- Postman  
+- IntelliJ IDEA  
+
+## 🔧 Run Locally
+```
+git clone https://github.com/HemanthKumarThiruvengadam/ForgeBase.git
+cd ForgeBase
+mvn clean install
+./mvnw spring-boot:run
+```
+## 🧑‍💻 Author
+
+**Hemanth Kumar T**  
+Mechanical Engineering | Aspiring Backend Developer  
+
+📫 [LinkedIn](https://www.linkedin.com/in/hemanth-kumar-thiruvengadam/)  
+💻 [GitHub](https://github.com/HemanthKumarThiruvengadam)
+
+---
+
+## 📜 License
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+This project is licensed under the MIT License – free to use, modify, and distribute.
 
 
