@@ -46,25 +46,25 @@ forgebase/
 🔗 API Endpoints
 
 Spur Gear
-
+```
 POST    /api/spurgears/calculations
 GET     /api/spurgears/calculations/all
 GET     /api/spurgears/calculations/{id}
 DELETE  /api/spurgears/calculations/{id}
 DELETE  /api/spurgears/calculations/all
-
+```
 Helical Gear
-
+```
 POST    /api/helicalgears/calculations
 GET     /api/helicalgears/calculations/all
 GET     /api/helicalgears/calculations/{id}
 DELETE  /api/helicalgears/calculations/{id}
 DELETE  /api/helicalgears/calculations/all
-
+```
 📥 Sample Inputs
 
 Spur Gear Input
-
+```
 {
   "createdAt": "2025-07-08T16:00:00.000+00:00",
   "pressureAngleOfGear": 20,
@@ -74,9 +74,9 @@ Spur Gear Input
   "addendaOnPinion": 1,
   "addendaOnGear": 1
 }
-
+```
 Helical Gear Input
-
+```
 {
   "createdAt": "2025-07-08T17:00:00.000+00:00",
   "module": 3.0,
@@ -87,10 +87,11 @@ Helical Gear Input
   "addendaOnPinion": 1,
   "addendaOnGear": 1
 }
+```
 📸 Screenshots
 
 Spur Gear
 
-![Spur Gear POST](forgebase/src/screenshots/buy_sell_signal.png)
+![Spur Gear POST](forgebase/src/screenshots/helicalgeardelete.png)
 
 
