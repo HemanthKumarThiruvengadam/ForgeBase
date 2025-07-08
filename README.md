@@ -91,7 +91,7 @@ DELETE /api/helicalgears/calculations/all
 
 ### Helical Gear
 
-- ![Helical POST](screenshots/helicalgearpost1.png)
+- ![Helical POST](src/screenshots/helicalgeardelete.png)
 - ![Helical POST](screenshots/helicalgearpost2.png)
 - ![Helical GET](screenshots/helicalgearget.png)
 - ![Helical DELETE](screenshots/helicalgeardelete.png)
