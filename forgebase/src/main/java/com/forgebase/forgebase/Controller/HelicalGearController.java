@@ -22,11 +22,11 @@ public class HelicalGearController {
         return ResponseEntity.ok(result);
 
     }
-    @GetMapping("/api/helicalgears/calculations/all")
+    @GetMapping("/all")
     public List<HelicalGearOutputDTO> getAllGears() {
         return helicalGearService.getAllGears();
     }
-    @GetMapping("/api/helicalgears/{Id}")
+    @GetMapping("/{Id}")
     public HelicalGearOutputDTO GetById(Long Id){
         return helicalGearService.GetById(Id);
     }

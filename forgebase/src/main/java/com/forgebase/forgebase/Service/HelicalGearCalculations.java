@@ -14,7 +14,7 @@ public class HelicalGearCalculations {
    private double helixAngleInRadians;
 
    private double normalModule;               // mn = m * cos(β)
-   private double transverseModule;          // mt = m
+   private final double transverseModule;          // mt = m
    private double pitchDiameterPinion;       // dp1 = m * z1 / cos(β)
    private double pitchDiameterGear;         // dp2 = m * z2 / cos(β)
    private double baseDiameterPinion;        // db1 = dp1 * cos(φ)
