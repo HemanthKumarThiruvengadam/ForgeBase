@@ -84,13 +84,18 @@ DELETE /api/helicalgears/calculations/all
 
 ### Spur Gear
 
-- ![Spur POST](screenshots/spur_post.png)
-- ![Spur GET](screenshots/spur_get.png)
+- ![Spur POST](screenshots/spurgearpost1.png)
+- ![Spur POST](screenshots/spurgearpost2.png)
+- ![Spur GET](screenshots/spurgearget.png)
+- ![Spur DELETE](screenshots/spurgeardelete.png)
 
 ### Helical Gear
 
-- ![Helical POST](screenshots/helical_post.png)
-- ![Helical GET](screenshots/helical_get.png)
+- ![Helical POST](screenshots/helicalgearpost1.png)
+- ![Helical POST](screenshots/helicalgearpost2.png)
+- ![Helical GET](screenshots/helicalgearget.png)
+- ![Helical DELETE](screenshots/helicalgeardelete.png)
+
 
 ---
 
