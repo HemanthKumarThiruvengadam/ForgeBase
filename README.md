@@ -88,10 +88,20 @@ Helical Gear Input
   "addendaOnGear": 1
 }
 ```
-📸 Screenshots
+### 📸 Spur Gear
 
-Spur Gear
+![Spur Gear POST 1](forgebase/src/screenshots/spurgearpost1.png)  
+![Spur Gear POST 2](forgebase/src/screenshots/spurgearpost2.png)  
+![Spur Gear GET](forgebase/src/screenshots/spurgearget.png)  
+![Spur Gear DELETE](forgebase/src/screenshots/spurgeardelete.png)
 
-![Spur Gear POST](forgebase/src/screenshots/helicalgeardelete.png)
+---
+
+### 📸 Helical Gear
+
+![Helical Gear POST 1](forgebase/src/screenshots/helicalgearpost1.png)  
+![Helical Gear POST 2](forgebase/src/screenshots/helicalgearpost2.png)  
+![Helical Gear GET](forgebase/src/screenshots/helicalgearget.png)  
+![Helical Gear DELETE](forgebase/src/screenshots/helicalgeardelete.png)
 
 
