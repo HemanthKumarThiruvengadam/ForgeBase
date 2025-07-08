@@ -1,33 +1,27 @@
-
-
----
-
-```markdown
 # ⚙️ ForgeBase – Gear Calculation Engine
 
-Spring Boot application that computes Spur and Helical gear parameters using mechanical formulas. Ideal for showcasing engineering + backend development skills.
+Spring Boot application that computes **Spur** and **Helical** gear parameters using standard mechanical engineering formulas. Ideal for students and engineers looking to explore backend logic + mechanical domain integration.
 
-> ⚠️ This project is for educational purposes only and not meant for manufacturing-grade outputs.
+> ⚠️ This project is for educational use only. Not validated for manufacturing use.
 
 ---
 
 ## 🚀 Features
 
-- 📐 Spur & Helical Gear Calculations
-- 🧠 Mechanical logic implemented in service layer
-- 🔗 REST API with Spring Boot
-- 🗃️ Data persistence with Spring Data JPA
-- ✅ Input validation using `javax.validation` annotations
-- 🔍 Separate DTOs for clean structure and security
-- 📊 Rounded outputs using `BigDecimal.setScale(...)`
-- 🔄 Full CRUD (Create, Read, Delete) supported
+- 🔧 REST APIs for Spur & Helical Gear Calculations  
+- 📐 Mechanical logic in `Calculation` classes  
+- 🧠 Business logic in `Service` layer  
+- 💾 Data stored via Spring Data JPA  
+- 🔐 Input validation with `javax.validation`  
+- 🎯 Rounded double outputs using `BigDecimal.setScale(...)`  
+- 🚮 Full CRUD: Create, Get, Delete by ID & Delete All  
+- 🧰 Clean DTO structure for input/output separation
 
 ---
 
 ## 📁 Project Structure
 
-```
-
+```bash
 forgebase/
 ├── Controller/
 │   ├── SpurGearController.java
@@ -47,63 +41,30 @@ forgebase/
 │   ├── SpurGearRepository.java
 │   └── HelicalGearRepository.java
 └── ForgebaseApplication.java
-
 ```
 
----
+🔗 API Endpoints
 
-## 🧪 API Endpoints
+Spur Gear
 
-### Spur Gear
+POST    /api/spurgears/calculations
+GET     /api/spurgears/calculations/all
+GET     /api/spurgears/calculations/{id}
+DELETE  /api/spurgears/calculations/{id}
+DELETE  /api/spurgears/calculations/all
 
-```
+Helical Gear
 
-POST   /api/spurgears/calculations
-GET    /api/spurgears/calculations/all
-GET    /api/spurgears/calculations/{id}
-DELETE /api/spurgears/calculations/{id}
-DELETE /api/spurgears/calculations/all
+POST    /api/helicalgears/calculations
+GET     /api/helicalgears/calculations/all
+GET     /api/helicalgears/calculations/{id}
+DELETE  /api/helicalgears/calculations/{id}
+DELETE  /api/helicalgears/calculations/all
 
-```
+📥 Sample Inputs
 
-### Helical Gear
+Spur Gear Input
 
-```
-
-POST   /api/helicalgears/calculations
-GET    /api/helicalgears/calculations/all
-GET    /api/helicalgears/calculations/{id}
-DELETE /api/helicalgears/calculations/{id}
-DELETE /api/helicalgears/calculations/all
-
-````
-
----
-
-## 📸 Screenshots
-
-### Spur Gear
-
-- ![Spur POST](screenshots/spurgearpost1.png)
-- ![Spur POST](screenshots/spurgearpost2.png)
-- ![Spur GET](screenshots/spurgearget.png)
-- ![Spur DELETE](screenshots/spurgeardelete.png)
-
-### Helical Gear
-
-- ![Helical POST](src/screenshots/helicalgeardelete.png)
-- ![Helical POST](screenshots/helicalgearpost2.png)
-- ![Helical GET](screenshots/helicalgearget.png)
-- ![Helical DELETE](screenshots/helicalgeardelete.png)
-
-
----
-
-## 📥 Sample Inputs
-
-### Spur Gear Input
-
-```json
 {
   "createdAt": "2025-07-08T16:00:00.000+00:00",
   "pressureAngleOfGear": 20,
@@ -113,11 +74,9 @@ DELETE /api/helicalgears/calculations/all
   "addendaOnPinion": 1,
   "addendaOnGear": 1
 }
-````
 
-### Helical Gear Input
+Helical Gear Input
 
-```json
 {
   "createdAt": "2025-07-08T17:00:00.000+00:00",
   "module": 3.0,
@@ -128,49 +87,10 @@ DELETE /api/helicalgears/calculations/all
   "addendaOnPinion": 1,
   "addendaOnGear": 1
 }
-```
+📸 Screenshots
 
----
+Spur Gear
 
-## 🔧 Run Locally
-
-```bash
-git clone https://github.com/HemanthKumarThiruvengadam/ForgeBase.git
-cd ForgeBase
-mvn clean install
-./mvnw spring-boot:run
-```
-
----
-
-## 🧠 Tech Stack
-
-* Java 21
-* Spring Boot 3.5
-* Spring Data JPA
-* Maven
-* MySQL
-* Postman
-* IntelliJ IDEA
-* Lombok
-
----
-
-## 👨‍💻 Author
-
-**Hemanth Kumar T**
-Mechanical Engineer | Backend Developer
-📫 [LinkedIn](https://www.linkedin.com/in/hemanth-kumar-thiruvengadam/)
-💻 [GitHub](https://github.com/HemanthKumarThiruvengadam)
-
----
-
-## 📜 License
-
-MIT License – Free to use and modify
-
-```
-
----
+![Spur Gear POST](forgebase/src/screenshots/buy_sell_signal.png)
 
 
