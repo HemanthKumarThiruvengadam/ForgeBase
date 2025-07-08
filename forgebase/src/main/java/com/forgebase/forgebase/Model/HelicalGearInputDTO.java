@@ -17,5 +17,6 @@ public class HelicalGearInputDTO {
     private final double pressureAngle;        // φ (degrees)
     private final double helixAngle;           // β (degrees)
     private final double addendaOnPinion;      // ap
-    private final double addendaOnGear;        // ag
+    private final double addendaOnGear;     // ag
+
 }

@@ -22,12 +22,21 @@ public class SpurGearController {
         SpurGearOutputDTO result = gearService.CalculateAndSave(inputDTO);
         return ResponseEntity.ok(result);
     }
-    @GetMapping
-    public SpurGearModel GetById(Long Id){
+    @GetMapping("/{Id}")
+    public SpurGearOutputDTO GetById(Long Id){
         return gearService.GetById(Id);
     }
-    @GetMapping
-    public List<SpurGearModel> getAllGears() {
+    @GetMapping("/all")
+    public List<SpurGearOutputDTO> getAllGears() {
         return gearService.getAllGears();
+    }
+    @DeleteMapping("/all")
+    public ResponseEntity<String> deleteAll(){
+        gearService.deleteAll();
+        return ResponseEntity.ok("All the Spur gear calculations are deleted");
+    }
+    public ResponseEntity<String> deleteById(Long Id){
+        gearService.deleteById(Id);
+        return ResponseEntity.ok("Spur gear with ID" + Id +"deleted successfully");
     }
 }

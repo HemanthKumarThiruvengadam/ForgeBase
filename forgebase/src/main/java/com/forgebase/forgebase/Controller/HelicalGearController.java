@@ -22,12 +22,22 @@ public class HelicalGearController {
         return ResponseEntity.ok(result);
 
     }
-    @GetMapping
-    public List<HelicalGearModel> getAllGears() {
+    @GetMapping("/api/helicalgears/calculations/all")
+    public List<HelicalGearOutputDTO> getAllGears() {
         return helicalGearService.getAllGears();
     }
-    @GetMapping
-    public HelicalGearModel GetById(Long Id){
+    @GetMapping("/api/helicalgears/{Id}")
+    public HelicalGearOutputDTO GetById(Long Id){
         return helicalGearService.GetById(Id);
+    }
+    @DeleteMapping("/all")
+    public ResponseEntity<String> deleteAll(){
+        helicalGearService.deleteAll();
+        return ResponseEntity.ok("All the Helical gear calculations are deleted");
+    }
+    @DeleteMapping("/{Id}")
+    public ResponseEntity<String> deleteById(Long Id){
+        helicalGearService.deleteById(Id);
+        return ResponseEntity.ok("Helical gear with ID" + Id +"deleted successfully");
     }
 }

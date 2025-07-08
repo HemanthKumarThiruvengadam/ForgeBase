@@ -1,13 +1,11 @@
 package com.forgebase.forgebase.Service;
 
-import com.forgebase.forgebase.Model.HelicalGearModel;
-import com.forgebase.forgebase.Model.SpurGearInputDTO;
-import com.forgebase.forgebase.Model.SpurGearModel;
-import com.forgebase.forgebase.Model.SpurGearOutputDTO;
+import com.forgebase.forgebase.Model.*;
 import com.forgebase.forgebase.Repository.SpurGearRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -57,11 +55,25 @@ public class SpurGearService {
                 .leavingContactRatio(model.getLeavingContactRatio())
                 .build();
     }
-    public SpurGearModel GetById(Long Id){
-        return gearRepository.findById(Id).orElseThrow(() -> new RuntimeException("Gear model not found for this Id"));
+    public SpurGearOutputDTO GetById(Long Id){
+         return (BuildOutputDTO(gearRepository.findById(Id).orElseThrow(() -> new RuntimeException("Gear model not found for this Id"))));
     }
-    public List<SpurGearModel> getAllGears() {
-        return gearRepository.findAll();
+    public List<SpurGearOutputDTO> getAllGears() {
+        List<SpurGearModel> spurGearModels = gearRepository.findAll();
+        ArrayList<SpurGearOutputDTO> spurGearOutputDTOS = new ArrayList<>();
+        for (SpurGearModel spurGearModel : spurGearModels){
+            spurGearOutputDTOS.add(BuildOutputDTO(spurGearModel));
+        }
+        return spurGearOutputDTOS;
+    }
+    public void deleteAll(){
+        gearRepository.deleteAll();
+    }
+    public void deleteById(Long Id){
+        if(!gearRepository.existsById(Id)){
+            throw new RuntimeException("Spur gear with ID " + Id + " not found");
+        }
+        gearRepository.deleteById(Id);
     }
 
 }

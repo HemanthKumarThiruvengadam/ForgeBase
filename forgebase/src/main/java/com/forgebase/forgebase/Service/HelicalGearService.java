@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.xml.stream.events.DTD;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -78,12 +79,25 @@ public class HelicalGearService {
                 .contactRatio(model.getContactRatio())
                 .build();
     }
-    public HelicalGearModel GetById(Long Id){
-        return helicalGearRepository.findById(Id).orElseThrow(() -> new RuntimeException("Gear model not found for this Id"));
+    public HelicalGearOutputDTO GetById(Long Id){
+        return BuildOutputDTO(helicalGearRepository.findById(Id).orElseThrow(() -> new RuntimeException("Gear model not found for this Id")));
     }
-    public List<HelicalGearModel> getAllGears() {
-        return helicalGearRepository.findAll();
+        public List<HelicalGearOutputDTO> getAllGears() {
+            List<HelicalGearModel> helicalGearModels = helicalGearRepository.findAll();
+            ArrayList<HelicalGearOutputDTO> helicalGearOutputDTOS = new ArrayList<>();
+            for (HelicalGearModel helicalGearModel : helicalGearModels){
+                helicalGearOutputDTOS.add(BuildOutputDTO(helicalGearModel));
+            }
+        return helicalGearOutputDTOS;
     }
-
+    public void deleteAll(){
+        helicalGearRepository.deleteAll();
+    }
+    public void deleteById(Long Id){
+        if (!helicalGearRepository.existsById(Id)) {
+            throw new RuntimeException("Helical gear with ID " + Id + " not found");
+        }
+        helicalGearRepository.deleteById(Id);
+    }
 
 }
