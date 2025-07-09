@@ -125,7 +125,7 @@ mvn clean install
 ## 🧑‍💻 Author
 
 **Hemanth Kumar T**  
-Mechanical Engineering | Aspiring Backend Developer  
+Mechanical Engineer | Aspiring Backend Developer  
 
 📫 [LinkedIn](https://www.linkedin.com/in/hemanth-kumar-thiruvengadam/)  
 💻 [GitHub](https://github.com/HemanthKumarThiruvengadam)
